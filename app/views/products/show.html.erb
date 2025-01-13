@@ -4,6 +4,8 @@
 
 <p><%= @product.description %></p>
 
+<%= image_tag @product.featured_image if @product.featured_image.attached? %>
+
 <div>
   <%= link_to "Edit this product", edit_product_path(@product) %> |
   <%= link_to "Back to products", products_path %>
