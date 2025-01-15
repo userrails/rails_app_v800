@@ -14,7 +14,7 @@
 * First recreate and migrate the main database `bin/rails db:prepare`
 * `bin/rails solid_queue:install FORCE=true`
 * Reinstall solid_queue (this should regenerate queue_schema.rb) `rails db:create:queue`
-* Create the queue database structure `bin/rails db:queue:schema:load`
+* Create the queue database structure `bin/rails db:queue:schema:load` || `bin/rails db:schema:load`
 * Solid Queue tables required e.g: solid_queue_blocked_executions
 * sqlite3 storage/development.sqlite3
 *    .tables
@@ -45,3 +45,5 @@
 * Uses Hotwire(Turbo and Stimulus) for realtime updates without JavaScript.
 * Multiple backends: supports SQL DB to handle websockets
 * High Scalability: without using Redis, suitable for apps that requires large-scale real-time communication.
+* 
+* NotificationChannel transmitting {"message" => "Product 10 created successfully", "type" => "success", "product_id" => 10, "timestamp" => "2025-01-15T17:10:48.362Z"} (via streamed from notifications_1)
