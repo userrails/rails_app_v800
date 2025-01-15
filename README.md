@@ -38,3 +38,10 @@
 *    database: storage/development.sqlite3
 * 
 * Ensure cache created: Rails.cache.fetch("all_products")
+
+## Solid Cable: Redis-free Real-time Websocket communication
+
+* Built on a top of ActionCable
+* Uses Hotwire(Turbo and Stimulus) for realtime updates without JavaScript.
+* Multiple backends: supports SQL DB to handle websockets
+* High Scalability: without using Redis, suitable for apps that requires large-scale real-time communication.
