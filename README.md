@@ -6,6 +6,11 @@
 ## Reduces complexity and costs
 
 * `gem "solid_queue"`
+* 
+* queue:
+*    <<: *default
+*    database: storage/development.sqlite3
+* 
 * First recreate and migrate the main database `bin/rails db:prepare`
 * `bin/rails solid_queue:install FORCE=true`
 * Reinstall solid_queue (this should regenerate queue_schema.rb) `rails db:create:queue`
