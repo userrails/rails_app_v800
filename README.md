@@ -22,3 +22,14 @@
 * Supports multiple backends: while it doesn't require Redis, it still supports various caching backends like in-memory storage and file storage.
 * Supports all traditional Rails caching techniques queries, fragment and action caching
 * By using DB, it reduces the need for extra caching services and simplifies your architecture
+* 
+* solid_cache_entries >> 1|development:all_products||2025-01-15 07:49:27.967|164890681108085263|633
+* 
+* development.rb config > `config.cache_store = :solid_cache_store`
+* 
+* DB config
+* cache:
+*    <<: *default
+*    database: storage/development.sqlite3
+* 
+* Ensure cache created: Rails.cache.fetch("all_products")

@@ -3,7 +3,9 @@ class ProductsController < ApplicationController
 
   # GET /products or /products.json
   def index
-    @products = Product.all
+    @products = Rails.cache.fetch("all_products", expires_in: 30.minutes) do
+      Product.all.to_a
+    end
   end
 
   # GET /products/1 or /products/1.json
