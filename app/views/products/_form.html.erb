@@ -1,9 +1,8 @@
-<%= form_with(model: product) do |form| %>
+<%= form_with(model: product, class: "space-y-6") do |form| %>
   <% if product.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-      <ul>
+    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+      <h2 class="font-bold"><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+      <ul class="list-disc pl-5">
         <% product.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -12,21 +11,21 @@
   <% end %>
 
   <div>
-    <%= form.label :featured_image, style: "display: block" %>
-    <%= form.file_field :featured_image, accept: "image/*" %>
+    <%= form.label :featured_image, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.file_field :featured_image, accept: "image/*", class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
   </div>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.text_field :name, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
   </div>
 
   <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.rich_text_area :description %>
+    <%= form.label :description, class: "block text-sm font-medium text-gray-700" %>
+    <%= form.rich_text_area :description, class: "mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit "Save Product", class: "inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500" %>
   </div>
 <% end %>
