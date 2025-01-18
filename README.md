@@ -47,3 +47,9 @@
 * High Scalability: without using Redis, suitable for apps that requires large-scale real-time communication.
 * 
 * NotificationChannel transmitting {"message" => "Product 10 created successfully", "type" => "success", "product_id" => 10, "timestamp" => "2025-01-15T17:10:48.362Z"} (via streamed from notifications_1)
+
+## Tailwind
+* `gem "tailwindcss-rails", "~> 3.2"`
+* tailwind.config.js
+* run `bin/dev`
+* Apply some tailwind changes 

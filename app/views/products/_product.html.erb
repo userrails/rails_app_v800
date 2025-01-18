@@ -1,8 +1,9 @@
-<tr id="<%= dom_id product %>">
-  <td>
-    <%= link_to product.name, product %>
+<tr id="<%= dom_id product %>" class="border-b hover:bg-gray-100">
+  <td class="py-4 px-6 text-gray-800">
+    <%= link_to product.name, product, class: "text-blue-500 hover:underline" %>
   </td>
-  <td>
-    <%= link_to "Show", product %>
+  <td class="py-4 px-6 text-right">
+    <%= link_to "Show", product, 
+        class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded shadow" %>
   </td>
 </tr>

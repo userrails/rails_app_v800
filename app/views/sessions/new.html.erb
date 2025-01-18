@@ -1,11 +1,27 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<%# Alert messages with Tailwind classes for styling %>
+<%= tag.div(flash[:alert], class: "bg-red-100 text-red-700 border border-red-300 p-4 rounded mb-4") if flash[:alert] %>
+<%= tag.div(flash[:notice], class: "bg-green-100 text-green-700 border border-green-300 p-4 rounded mb-4") if flash[:notice] %>
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
+<%# Form with Tailwind CSS classes %>
+<%= form_with url: session_path, class: "space-y-4 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" do |form| %>
+  <div class="mb-4">
+    <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", 
+        placeholder: "Enter your email address", value: params[:email_address], 
+        class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+  
+  <div class="mb-4">
+    <%= form.password_field :password, required: true, autocomplete: "current-password", 
+        placeholder: "Enter your password", maxlength: 72, 
+        class: "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" %>
+  </div>
+  
+  <div class="flex items-center justify-between">
+    <%= form.submit "Sign in", class: "bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
+  </div>
 <% end %>
-<br>
 
-<%= link_to "Forgot password?", new_password_path %>
+<%# Link with Tailwind CSS classes %>
+<div class="text-center mt-4">
+  <%= link_to "Forgot password?", new_password_path, class: "text-blue-500 hover:text-blue-700" %>
+</div>
