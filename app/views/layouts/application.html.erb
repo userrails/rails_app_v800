@@ -18,14 +18,17 @@
     <link rel="apple-touch-icon" href="/icon.png">
 
     <%# Includes all stylesheet files in app/assets/stylesheets %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <nav>
-      <%= link_to "Home", root_path %>
-      <%= button_to "Log out", session_path, method: :delete if authenticated? %>
+    <nav class="bg-gray-800 text-white p-4 flex items-center">
+      <div class="flex space-x-4">
+        <%= link_to "Home", root_path, class: "hover:text-gray-300" %>
+        <%= button_to "Log out", session_path, method: :delete, class: "hover:text-gray-300", if: authenticated? %>
+      </div>
     </nav>
 
     <%= render 'layouts/notifications' %>
