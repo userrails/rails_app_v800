@@ -7,11 +7,13 @@ import "@rails/actiontext"
 import "channels"
 
 // Import React components
-import React from "react"
+import React, { useEffect, useRef } from 'react'
+
 import ReactDOM from "react-dom"
 import HelloWorld from "components/HelloWorld"
 import InventorySearch from "components/InventorySearch"
 import StockLevels from "components/StockLevels"
+import InventoryTrends from "components/InventoryTrends"
 
 // Mount React in specific parts of the app
 document.addEventListener("turbo:load", () => {
@@ -28,5 +30,10 @@ document.addEventListener("turbo:load", () => {
   const stockRoot = document.getElementById("stock-levels");
   if (stockRoot) {
     ReactDOM.render(React.createElement(StockLevels), stockRoot);
+  }
+
+  const trendsRoot = document.getElementById("inventory-trends");
+  if (trendsRoot) {
+    ReactDOM.render(React.createElement(InventoryTrends), trendsRoot);
   }
 });

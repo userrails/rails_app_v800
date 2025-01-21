@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   namespace :api do
     get 'inventory/search'
     get 'inventory/stock_levels'
+    get 'inventory/trends'
   end
 end
