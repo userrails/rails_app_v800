@@ -12,7 +12,7 @@ import ReactDOM from "react-dom"
 import HelloWorldComponent from "components/HelloWorldComponent"
 
 // Mount React in specific parts of the app
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("turbo:load", () => {
   const root = document.getElementById("react-root");
   if (root) {
     ReactDOM.render(React.createElement(HelloWorldComponent), root);
