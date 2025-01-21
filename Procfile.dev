@@ -1,2 +1,4 @@
 web: bin/rails server
-css: bin/rails tailwindcss:watch
+css: tailwindcss -i app/assets/stylesheets/application.css -o app/assets/builds/application.css --watch
+js: esbuild app/javascript/application.js --bundle --watch --sourcemap --loader:.js=jsx --loader:.jsx=jsx
+

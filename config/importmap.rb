@@ -9,3 +9,9 @@ pin "trix"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "@rails/actioncable", to: "actioncable.esm.js"
 pin_all_from "app/javascript/channels", under: "channels"
+pin "react", to: "https://ga.jspm.io/npm:react@18.2.0/index.js"
+pin "react-dom", to: "https://ga.jspm.io/npm:react-dom@18.2.0/index.js"
+pin "scheduler", to: "https://ga.jspm.io/npm:scheduler@0.23.0/index.js" # React dependency
+
+# Pin your local components
+pin_all_from "app/javascript/components", under: "components"

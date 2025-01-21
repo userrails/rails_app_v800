@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   get "about", to: "pages#about", as: :about
   get "contact", to: "pages#contact", as: :contact
   get "services", to: "pages#services", as: :services
+  get "home", to: "home#index", as: :home
 end

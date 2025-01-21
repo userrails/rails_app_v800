@@ -5,3 +5,16 @@ import "controllers"
 import "trix"
 import "@rails/actiontext"
 import "channels"
+
+// Import React components
+import React from "react"
+import ReactDOM from "react-dom"
+import HelloWorldComponent from "components/HelloWorldComponent"
+
+// Mount React in specific parts of the app
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.getElementById("react-root");
+  if (root) {
+    ReactDOM.render(React.createElement(HelloWorldComponent), root);
+  }
+});
