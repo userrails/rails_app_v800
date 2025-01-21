@@ -52,4 +52,10 @@
 * `gem "tailwindcss-rails", "~> 3.2"`
 * tailwind.config.js
 * run `bin/dev`
-* Apply some tailwind changes 
+* Apply some tailwind changes
+
+## ReactJS
+* Suggested to use Hotwire which by default comes on Rails8. But we can also use bundle Vue or ReactJS.
+* In this test app, addedd ReactJS component HelloWorld to render in HomeController
+* Note: Mixing Hotwire and ReactJS might collide each other
+* 
