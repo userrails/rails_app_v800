@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get "home", to: "home#index", as: :home
 
   namespace :api do
-    get 'inventory/search', to: 'inventory#search'
+    get 'inventory/search'
+    get 'inventory/stock_levels'
   end
 end

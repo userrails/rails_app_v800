@@ -13,13 +13,13 @@ const InventorySearch = () => {
     setResults(data)
   }
 
-  return React.createElement('div', null, [
+  return React.createElement('div', { className: 'search-container' }, [
     React.createElement('input', {
       type: 'text',
       value: query,
       onChange: handleSearch,
       placeholder: 'Search inventory...',
-      className: 'form-control',
+      className: 'form-control search-input',
       key: 'search-input'
     }),
     React.createElement('div', { 
@@ -31,8 +31,11 @@ const InventorySearch = () => {
           key: item.id,
           className: 'result-item'
         }, [
-          React.createElement('span', { key: 'name' }, item.name),
-          React.createElement('span', { key: 'qty' }, ` -> ${item.qty} in stock`)
+          React.createElement('div', { key: 'name', className: 'item-name' }, item.name),
+          React.createElement('div', { key: 'qty', className: 'item-qty' }, 
+            React.createElement('span', { className: 'qty-label' }, 'Stock: '),
+            React.createElement('span', { className: 'qty-value' }, item.qty)
+          )
         ])
       )
     )

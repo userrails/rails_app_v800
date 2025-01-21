@@ -58,4 +58,6 @@
 * Suggested to use Hotwire which by default comes on Rails8. But we can also use bundle Vue or ReactJS.
 * In this test app, addedd ReactJS component HelloWorld to render in HomeController
 * Note: Mixing Hotwire and ReactJS might collide each other
+* Using ReactJS, Rails API, added InventorySearch and Realtime StockLevels components to render in HomeController aka Inventory Dashboard
+* Stock notification each after 30 secs.
 * 

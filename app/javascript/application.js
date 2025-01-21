@@ -11,6 +11,7 @@ import React from "react"
 import ReactDOM from "react-dom"
 import HelloWorld from "components/HelloWorld"
 import InventorySearch from "components/InventorySearch"
+import StockLevels from "components/StockLevels"
 
 // Mount React in specific parts of the app
 document.addEventListener("turbo:load", () => {
@@ -22,5 +23,10 @@ document.addEventListener("turbo:load", () => {
   const searchRoot = document.getElementById("inventory-search");
   if (searchRoot) {
     ReactDOM.render(React.createElement(InventorySearch), searchRoot);
+  }
+
+  const stockRoot = document.getElementById("stock-levels");
+  if (stockRoot) {
+    ReactDOM.render(React.createElement(StockLevels), stockRoot);
   }
 });
