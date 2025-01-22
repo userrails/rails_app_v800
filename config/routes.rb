@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact", as: :contact
   get "services", to: "pages#services", as: :services
   get "home", to: "home#index", as: :home
+  
+  resources :categories
 
   namespace :api do
     get 'inventory/search'
